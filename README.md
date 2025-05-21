@@ -1,81 +1,81 @@
-# JavaScript Minesweeper Game
+# JavaScript 扫雷游戏
 
 [English](README.EN.md) | [简体中文](README.md)
 
-A classic Minesweeper game implemented with pure HTML, CSS and JavaScript.
+一个使用纯HTML、CSS和JavaScript实现的经典扫雷游戏。
 
-## Game Features
+## 游戏特点
 
-- 🎮 **Classic Gameplay**: Same rules and experience as the classic Windows Minesweeper game
-- 🎚️ **Multiple Difficulty Levels**: Offers beginner (12x12), intermediate (16x16), and advanced (19x19) difficulty options
-- 🎯 **Safe First Click**: The first click will never hit a mine
-- 🚩 **Flag Marking**: Right-click to mark suspected mine locations
-- 🔢 **Number Hints**: Colored numbers showing the count of surrounding mines
-- 📱 **Responsive Design**: Adapts to different screen sizes, including mobile devices
+- 🎮 **经典玩法**：与Windows经典扫雷游戏相同的规则和体验
+- 🎚️ **多级难度**：提供初级(12x12)、中级(16x16)和高级(19x19)三种难度选择
+- 🎯 **第一次点击安全**：首次点击永远不会触雷
+- 🚩 **标记功能**：右键点击可标记可疑的地雷位置
+- 🔢 **数字提示**：显示周围地雷数量的彩色数字
+- 📱 **响应式设计**：适配不同屏幕尺寸，包括移动设备
 
-## Online Demo
+## 在线体验
 
-🎮 [Click here to play the game online](https://blog.forminio.cn/sao-lei)
+🎮 [点击这里在线体验游戏](https://blog.forminio.cn/sao-lei)
 
-## Game Screenshot
+## 游戏截图
 
-![Minesweeper Game Screenshot](https://cdn.forminio.cn/picx-images-hosting@master/wenzhan/扫雷截图.esqorn3ch.webp)
+![扫雷游戏截图](https://cdn.forminio.cn/picx-images-hosting@master/wenzhan/扫雷截图.esqorn3ch.webp)
 
-## Installation and Running
+## 安装与运行
 
-Clone the repository:
+克隆仓库：
 
 ```bash
 git clone https://github.com/Forminio/minesweeper-game.git
 ```
 
-## Technical Implementation Details
-### 1. Game Core Data Structures
-The game uses two two-dimensional arrays as core data structures:
-- mineBoard: Records whether each cell is a mine ('M') or a number (0-8)
-- showBoard: Records the display state of each cell ('hidden', 'revealed', 'flag', 'mine')
+## 技术实现详解
+### 1. 游戏核心数据结构
+游戏使用两个二维数组作为核心数据结构：
+- mineBoard ：记录每个格子是地雷('M')还是数字(0-8)
+- showBoard ：记录每个格子的显示状态('hidden'、'revealed'、'flag'、'mine')
 
-### 2. Mine Generation Algorithm
-Key implementation points:
+### 2. 地雷生成算法
+关键实现点：
 
-- Uses random numbers to generate mine positions
-- Ensures the first click position and its surrounding 8 cells will not have mines
-- After placing mines, calculates the number of surrounding mines for each non-mine cell
-### 3. Auto-Expansion Algorithm (Recursive Implementation)
-Key implementation points:
+- 使用随机数生成地雷位置
+- 确保首次点击位置及其周围8个格子不会有地雷
+- 地雷放置完成后，计算每个非地雷格子周围的地雷数量
+### 3. 自动展开算法（递归实现）
+关键实现点：
 
-- Uses a recursive algorithm to automatically expand blank areas
-- When clicking on a cell with number 0 (no surrounding mines), automatically expands the surrounding 8 cells
-- Recursion continues to expand until number cells are encountered
-- Boundary checks ensure no out-of-bounds errors
-### 4. Victory Detection Algorithm
-Key implementation points:
+- 使用递归算法自动展开空白区域
+- 当点击到数字0（周围无雷）的格子时，自动展开周围的8个格子
+- 递归继续展开，直到遇到数字格子为止
+- 边界检查确保不会越界
+### 4. 胜利检测算法
+关键实现点：
 
-- Counts the number of revealed cells
-- When the number of revealed cells equals the total number of cells minus the number of mines, declares victory
-- Automatically marks all unmarked mines upon victory
-### 5. Rendering and DOM Operations
-Key implementation points:
+- 计算已揭示的格子数量
+- 当已揭示格子数量等于总格子数减去地雷数时，判定为胜利
+- 胜利时自动标记所有未标记的地雷
+### 5. 渲染与DOM操作
+关键实现点：
 
-- Uses CSS Grid layout to implement the game grid
-- Dynamically adjusts grid size to accommodate different difficulty levels
-- Adds click and right-click events to each cell
-- Sets different styles and content based on cell state
-### 6. Responsive Design
-Key implementation points:
+- 使用CSS Grid布局实现游戏网格
+- 动态调整网格大小以适应不同难度
+- 为每个单元格添加点击和右键点击事件
+- 根据单元格状态设置不同的样式和内容
+### 6. 响应式设计
+关键实现点：
 
-- Uses media queries to adapt to different screen sizes
-- Adjusts button layout and cell size on small screen devices
-- Ensures the game runs well on mobile devices
-### 7. Robustness and Error Handling
-Key implementation points:
+- 使用媒体查询适配不同屏幕尺寸
+- 在小屏幕设备上调整按钮布局和单元格大小
+- 确保游戏在移动设备上也能良好运行
+### 7. 健壮性与错误处理
+关键实现点：
 
-- Adds multiple event listeners to ensure the game runs normally in various situations
-- Periodically checks game state and automatically fixes potential issues
-- Handles page visibility changes, cache loading, and other special cases
+- 添加多种事件监听确保游戏在各种情况下都能正常运行
+- 定期检查游戏状态，自动修复可能的问题
+- 处理页面可见性变化、缓存加载等特殊情况
 
-## Design Highlights
-- Classic Windows Style UI: Uses gray background, raised and recessed borders to recreate the visual style of classic Windows Minesweeper
-- Colored Number Hints: Different numbers use different colors to improve game readability
-- Game State Feedback: Provides game end feedback through modal windows, displaying game results and time
-- Adaptive Layout: Game interface can adapt to different screen sizes, providing a good experience on both desktop and mobile devices
+## 设计亮点
+- 经典Windows风格UI ：使用灰色背景、凸起和凹陷的边框，重现经典Windows扫雷游戏的视觉风格
+- 彩色数字提示 ：不同数字使用不同颜色，提高游戏可读性
+- 游戏状态反馈 ：通过模态窗口提供游戏结束反馈，显示游戏结果和用时
+- 自适应布局 ：游戏界面能够适应不同屏幕尺寸，在桌面和移动设备上都有良好体验
