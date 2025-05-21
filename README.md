@@ -1,6 +1,6 @@
 # JavaScript Minesweeper Game
 
-[English](README.md) | [简体中文](README.zh-CN.md)
+[English](README.EN.md) | [简体中文](README.md)
 
 A classic Minesweeper game implemented with pure HTML, CSS and JavaScript.
 
