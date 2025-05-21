@@ -1,4 +1,4 @@
-# JavaScript 扫雷游戏
+# 扫雷游戏
 
 [English](README.EN.md) | [简体中文](README.md)
 
